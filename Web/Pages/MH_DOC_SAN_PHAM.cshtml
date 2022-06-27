@@ -1,0 +1,78 @@
+﻿@page
+
+@model Web.Pages.MH_DOC_SAN_PHAMModel
+@{
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mặt Hàng</title>
+</head>
+
+<body>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+
+    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+        <p class="nav-item">
+            <a class="nav-link text-white bg-primary mr-1" asp-area="" asp-page="/MH_THEM_SAN_PHAM">Thêm Sản Phẩm</a>
+        </p>
+    </div>
+
+    <form method="GET">
+        <div>
+            <label class="font-weight-bold">Từ khóa</label><br />
+            <input type="text" name="tu_khoa" placeholder="nhập từ khóa để tìm kiếm" value="@Model.tu_khoa" />
+        </div>
+
+        <div>
+            <label class="font-weight-bold">Tìm Sản Phẩm Hết Hạn Sử Dụng</label><br />
+            <input type="date" id="startdateId" name="ngay" value="@Model.ngay" />
+        </div>
+
+        <div class="mt-2">
+            <input class="bg-success text-white" type="submit" value="Tìm kiếm" /><br />
+        </div>
+
+    </form>
+
+    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between mt-3">
+        <p class="nav-item">
+            <a class="nav-link text-white bg-info" asp-area="" asp-page="/MH_DOC_SAN_PHAM">Xóa dữ liệu trong ô tìm kiếm</a>
+        </p>
+    </div>
+
+    <h2>Sản phẩm</h2>
+    <table>
+        <tr>
+            <th>Mã</th>
+            <th>Tên Hàng</th>
+            <th>Hạn dùng</th>
+            <th>Công ty sản xuất</th>
+            <th>Năm sản xuất</th>
+            <th>Loại hàng</th>
+            <th>Số lượng</th>
+            <th>Xóa Sửa</th>
+        </tr>
+        @for (int i = 0; i < Model.ds_san_pham.Count; i++)
+        {
+            <tr>
+                <td>@Model.ds_san_pham[i].Ma</td>
+                <td>@Model.ds_san_pham[i].Ten_hang</td>
+                <td>@Model.ds_san_pham[i].Han_dung.ToShortDateString()</td>
+                <td>@Model.ds_san_pham[i].Cong_ty_sx</td>
+                <td>@Model.ds_san_pham[i].Nam_sx</td>
+                <td>@Model.ds_san_pham[i].Loai_hang</td>
+                <td>@Model.ds_san_pham[i].Soluong</td>
+                <td>
+                    <a href="/MH_SUA_SAN_PHAM?Pid=@Model.ds_san_pham[i].Ma">Sửa sản phẩm</a>
+                    <a href="/MH_XOA_SAN_PHAM?Pid=@Model.ds_san_pham[i].Ma">Xóa sản phẩm</a>
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>

@@ -1,0 +1,23 @@
+﻿@page
+@model Web.Pages.MH_THEM_LOAI_HANGModel
+@{
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thêm loại hàng</title>
+</head>
+<body>
+    <h3>Thêm</h3>
+    <form method="POST">
+        <div>
+            <label>Tên loại hàng</label><br />
+            <input type="text" asp-for="@Model.loaihang.Ten_loai_hang" /><br />
+            <span asp-validation-for="@Model.loaihang.Ten_loai_hang"></span><br />
+            <input type="submit" value="Thêm" />
+        </div>
+        <div><a asp-page="/MH_DOC_SAN_PHAM">Trở về trang sản phẩm </a></div>
+    </form>
+    <h3>@Model.chuoi</h3>
+</body>
+</html>

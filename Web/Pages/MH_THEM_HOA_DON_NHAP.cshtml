@@ -1,0 +1,45 @@
+﻿@page
+@model Web.Pages.MH_THEM_HOA_DON_NHAPModel
+@{
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thêm Hóa Đơn Nhập</title>
+</head>
+<body>
+    <h3>Thêm hóa đơn</h3>
+    <form method="POST">
+
+        <div>
+            <label>Ngày tạo hóa đơn</label><br />
+            <input type="date" id = "startdateId" asp-for="@Model.hdnhap.ngay_tao_hoa_don" value="@DateTime.Now" />
+            <span asp-validation-for="@Model.hdnhap.ngay_tao_hoa_don"></span>
+        </div>
+        <script>
+            document.getElementById('startdateId').value = new Date().toISOString().slice(0, 10);
+        </script>
+
+
+        <div class="mb-0">
+            <label>Sản Phẩm</label><br />
+            @Html.DropDownListFor(m => m.Ten_San_Pham, new SelectList(Model.ds_san_pham, "Ten_hang", "Ten_hang"))<br />
+        </div>
+
+        <br />
+
+        <div class="mb-2">
+            <label>Số lượng nhập</label><br />
+            <input type="number" min="1" max="20" value="1" asp-for="@Model.hdnhap.so_luong" /> <br />
+            <span asp-validation-for="@Model.hdnhap.so_luong"></span><br />
+
+        </div>
+
+        <div>
+            <input type="submit" value="Thêm" />
+        </div>
+    </form>
+    <div><a asp-page="/MH_HOA_DON_NHAP">Trở về trang hóa đơn nhập </a></div>
+    <h2>@Model.chuoi</h2>
+</body>
+</html>

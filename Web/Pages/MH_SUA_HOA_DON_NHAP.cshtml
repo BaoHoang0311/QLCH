@@ -1,0 +1,32 @@
+﻿@page
+@model Web.Pages.MH_SUA_HOA_DON_NHAPModel
+@{
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sửa hóa đơn nhập</title>
+</head>
+<body>
+    <h3>Sửa</h3>
+    <div><a asp-page="/MH_HOA_DON_NHAP">Trở về trang hóa đơn nhập </a></div>
+    <br />
+    <div>
+        <label>Mã Hóa đơn: @Model.Pid</label>
+    </div>
+    <form method="Post">
+        <div>
+            <label>Ngày tạo hóa đơn</label><br />
+            <input type="date" id="startdateId" asp-for="@Model.hdnhap.ngay_tao_hoa_don" />
+            <span asp-validation-for="@Model.hdnhap.ngay_tao_hoa_don"></span>
+        </div>
+
+        <div class="group">
+            <label>Số Lượng </label> <br />
+            <input class="bg-secondary" readonly="readonly" value="@Model.hdnhap.so_luong">
+        </div>
+
+        <input type="submit" value="Sửa" />
+    </form>
+</body>
+</html>

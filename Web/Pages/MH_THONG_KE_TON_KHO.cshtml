@@ -1,0 +1,35 @@
+﻿@page
+@model Web.Pages.MH_THONG_KE_TON_KHOModel
+@{
+}
+
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
+
+<h2>Sản phẩm Tồn Kho</h2>
+<table>
+    <tr>
+        <th>Mã</th>
+        <th>Tên Hàng</th>
+        <th>Hạn dùng</th>
+        <th>Công ty sản xuất</th>
+        <th>Năm sản xuất</th>
+        <th>Loại hàng</th>
+        <th>Số lượng</th>
+    </tr>
+    @for (int i = 0; i < Model.ds_san_pham.Count; i++)
+    {
+        <tr>
+            <td>@Model.ds_san_pham[i].Ma</td>
+            <td>@Model.ds_san_pham[i].Ten_hang</td>
+            <td>@Model.ds_san_pham[i].Han_dung.ToShortDateString()</td>
+            <td>@Model.ds_san_pham[i].Cong_ty_sx</td>
+            <td>@Model.ds_san_pham[i].Nam_sx</td>
+            <td>@Model.ds_san_pham[i].Loai_hang</td>
+            <td>@Model.ds_san_pham[i].Soluong</td>
+        </tr>
+    }
+</table>

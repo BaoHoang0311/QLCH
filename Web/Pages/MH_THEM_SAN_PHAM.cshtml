@@ -1,0 +1,48 @@
+﻿@page "/Them-san-pham"
+@model DO_AN.MH_THEM_SAN_PHAMModel
+@{
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mặt Hàng</title>
+</head>
+<body>
+    <h3>Thêm Sản Phẩm</h3>
+    <form method="POST">
+        <div>
+            <label>Tên hàng</label><br />
+            <input type="text" asp-for="@Model.san_pham.Ten_hang" autofocus /><br />
+            <span class="text-danger" asp-validation-for="@Model.san_pham.Ten_hang"></span><br />
+        </div>
+        <div>
+            <label>Hạn dùng</label><br />
+            <input type="date" id="startdateId" asp-for="@Model.san_pham.Han_dung" value="@DateTime.Now" /><br />
+            <span class="text-danger" asp-validation-for="@Model.san_pham.Han_dung"></span><br />
+        </div>
+        <script>
+            document.getElementById('startdateId').value = new Date().toISOString().slice(0, 10);
+        </script>
+        <div>
+            <label>Công ty sản xuất</label><br />
+            <input type="text" asp-for="@Model.san_pham.Cong_ty_sx" /><br />
+            <span class="text-danger" asp-validation-for="@Model.san_pham.Cong_ty_sx"></span><br />
+        </div>
+
+        <div>
+            <label>Năm Sản xuất</label><br />
+            <input type="number" min="2018" max="2999
+                   " step="1" value="2022" asp-for="@Model.san_pham.Nam_sx" /><br />
+            <span class="text-danger" asp-validation-for="@Model.san_pham.Nam_sx"></span><br />
+        </div>
+
+        <div>
+            @Html.DropDownListFor(m => m.id, new SelectList(Model.ds_loai_hang, "Ma_hang", "Ten_loai_hang"))
+        </div>
+
+        <input type="submit" value="Thêm" />
+    </form>
+</body>
+</html>
+<div><a asp-page="/MH_DOC_SAN_PHAM">Trở về trang sản phẩm </a></div>
+<h3>@Model.chuoi</h3>

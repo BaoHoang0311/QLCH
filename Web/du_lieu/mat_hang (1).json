@@ -1,0 +1,56 @@
+[
+  {
+    "Ma": "1",
+    "Ten_hang": "Iphone 12",
+    "Han_dung": "2023-05-22T00:00:00",
+    "Cong_ty_sx": "công ty Apple",
+    "Nam_sx": 2020,
+    "Loai_hang": "Điện thoại di động",
+    "Soluong": 52
+  },
+  {
+    "Ma": "2",
+    "Ten_hang": "Acer nitro 5 gaming",
+    "Han_dung": "2022-04-30T00:00:00",
+    "Cong_ty_sx": "nhà máy Acer",
+    "Nam_sx": 2021,
+    "Loai_hang": "Máy tính cá nhân",
+    "Soluong": 10
+  },
+  {
+    "Ma": "3",
+    "Ten_hang": "Xiaomi Band 6",
+    "Han_dung": "2023-04-26T00:00:00",
+    "Cong_ty_sx": "xưởng gia công",
+    "Nam_sx": 2022,
+    "Loai_hang": "Đồng hồ",
+    "Soluong": 28
+  },
+  {
+    "Ma": "4",
+    "Ten_hang": "Xiaomi Band 7",
+    "Han_dung": "2021-04-26T00:00:00",
+    "Cong_ty_sx": "IBM",
+    "Nam_sx": 2019,
+    "Loai_hang": "Máy tính cá nhân",
+    "Soluong": 13
+  },
+  {
+    "Ma": "6",
+    "Ten_hang": "Legion 5 gaming",
+    "Han_dung": "2022-05-31T00:00:00",
+    "Cong_ty_sx": "nhà máy Lenovo",
+    "Nam_sx": 2022,
+    "Loai_hang": "Máy tính bảng",
+    "Soluong": 49
+  },
+  {
+    "Ma": "7",
+    "Ten_hang": "Macbook pro A1",
+    "Han_dung": "2023-05-31T00:00:00",
+    "Cong_ty_sx": "Apple",
+    "Nam_sx": 2021,
+    "Loai_hang": "Điện thoại di động",
+    "Soluong": 30
+  }
+]

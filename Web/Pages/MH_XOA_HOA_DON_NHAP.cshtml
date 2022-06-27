@@ -1,0 +1,18 @@
+﻿@page
+@model Web.Pages.MH_XOA_HOA_DON_NHAPModel
+@{
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Xóa hóa đơn nhập</title>
+</head>
+<body>
+    <h3>Xóa</h3>
+    Bạn có muốn xóa hóa đơn nhập mã: @Model.hoa_don_nhap.ma và ngày tạo @Model.hoa_don_nhap.ngay_tao_hoa_don.ToShortDateString()
+    <br />
+    <form method="Post">
+        <input type="submit" value="Xóa" />
+    </form>
+</body>
+</html>

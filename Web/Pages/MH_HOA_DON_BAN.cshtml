@@ -1,0 +1,67 @@
+﻿@page
+@model Web.Pages.MH_HOA_DON_BANModel
+@{
+}
+<html>
+<head>
+    <title>Hóa đơn bán</title>
+</head>
+
+<body>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+
+    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+        <p class="nav-item">
+            <a class="nav-link text-white bg-primary mr-1" asp-area="" asp-page="/MH_THEM_HOA_DON_BAN">Thêm Hóa Đơn Bán</a>
+        </p>
+    </div>
+
+
+    <form method="get">
+        <div>
+            <label class="font-weight-bold">Tìm ngày nhập hóa đơn bán</label><br />
+            <input type="date" id="startdateId" asp-for="@Model.tu_khoa" /><br />
+        </div>
+
+        <input class="bg-success text-white mt-2" type="submit" value="Tìm kiếm" /><br />
+    </form>
+
+    <script>
+        document.getElementById('startdateId').value = new Date().toISOString().slice(0, 10);
+    </script>
+
+    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between mt-3">
+        <p class="nav-item">
+            <a class="nav-link text-white bg-info mr-1" asp-area="" asp-page="/MH_HOA_DON_NHAP">Xóa dữ liệu trong ô tìm kiếm</a>
+        </p>
+    </div>
+
+    <h2>Hóa đơn bán</h2>
+    <table>
+        <tr>
+            <th>Mã</th>
+            <th>Ngày nhập hóa đơn bán</th>
+            <th>Sản phẩm</th>
+            <th>Số lượng</th>
+            <th>Xóa/Sửa</th>
+        </tr>
+        @for (int i = 0; i < Model.ds_hoa_don_ban.Count; i++)
+        {
+            <tr>
+                <td>@Model.ds_hoa_don_ban[i].ma</td>
+                <td>@Model.ds_hoa_don_ban[i].ngay_tao_hoa_don.ToShortDateString()</td>
+                <td>@Model.ds_hoa_don_ban[i].SanPham</td>
+                <td>@Model.ds_hoa_don_ban[i].so_luong</td>
+                <td>
+                    <a href="/MH_SUA_HOA_DON_BAN?Pid=@Model.ds_hoa_don_ban[i].ma">Sửa hóa đơn bán</a>
+                    <a href="/MH_XOA_HOA_DON_BAN?Pid=@Model.ds_hoa_don_ban[i].ma">Xóa hóa đơn bán</a>
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>

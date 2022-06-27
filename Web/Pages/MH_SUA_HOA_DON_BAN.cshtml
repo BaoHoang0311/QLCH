@@ -1,0 +1,31 @@
+﻿@page
+@model Web.Pages.MH_SUA_HOA_DON_BANModel
+@{
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sửa hóa đơn bán</title>
+</head>
+<body>
+    <h3>Sửa</h3>
+    <div>
+        <label>Mã Hóa đơn: @Model.Pid</label>
+    </div>
+    <br />
+    <form method="Post">
+        <div>
+            <label>Ngày tạo hóa đơn</label><br />
+            <input type="date" id="startdateId" asp-for="@Model.hoa_don_ban.ngay_tao_hoa_don" />
+            <span asp-validation-for="@Model.hoa_don_ban.ngay_tao_hoa_don"></span>
+        </div>
+
+        <div class="group">
+            <label>Số Lượng </label> <br />
+            <input class="bg-secondary" readonly="readonly" value="@Model.hoa_don_ban.so_luong">
+        </div>
+
+        <input type="submit" value="Sửa" />
+    </form>
+</body>
+</html>
